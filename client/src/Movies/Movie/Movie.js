@@ -5,8 +5,8 @@ import {
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 const movie = (props) => (
-    <Card onClick={props.clicked}>
-        <CardImg top src={props.imgUrl} alt={props.title} />
+    <Card>
+        <CardImg onClick={props.clicked} top src={props.imgUrl} alt={props.title} />
         <CardBody>
             <CardTitle>{props.title}</CardTitle>
             <CardSubtitle>{props.premiered}</CardSubtitle>

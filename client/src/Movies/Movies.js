@@ -33,8 +33,10 @@ export default class Movies extends Component {
                 this.setState({ error: err });
             })
     }
-    addToWatchlist(id) {
-        console.log(this.state.movies.indexOf({ id: id }));
+    addToWatchlist(e, id) {
+        e.preventDefault();
+        axios.put('http://localhost:3000/watchlist', { "id": id })
+        console.log(id);
 
     }
     render() {
@@ -55,7 +57,9 @@ export default class Movies extends Component {
                         genres={array2string(movie.genres)}
                         status={movie.status}
                         clicked={() => this.props.history.push('/' + movie.id)}
-                        addToWatchlist={() => { this.addToWatchlist(movie.id) }} />
+                        addToWatchlist={(e) => this.addToWatchlist(e, movie.id)}
+                    // onSubmit={(e) => { this.searchhandler(); e.preventDefault(); }}
+                    />
                 )
             });
 

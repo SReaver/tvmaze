@@ -59,6 +59,12 @@ export default class Search extends Component {
                 })
         }
     }
+    addToWatchlist(e, id) {
+        e.preventDefault();
+        axios.put('http://localhost:3000/watchlist', { "id": id })
+        console.log(id);
+
+    }
     render() {
         let { currentPage } = this.state;
         let movies = this.state.error ? <p>Movies can't be loaded</p> : <Spinner />;
@@ -79,7 +85,8 @@ export default class Search extends Component {
                         premiered={movie.premiered}
                         genres={movie.genres.length < 1 ? array2string(movie.genres) : 'Genre not defined'}
                         status={movie.status}
-                        clicked={() => this.props.history.push('/' + movie.id)} />
+                        clicked={() => this.props.history.push('/' + movie.id)}
+                        addToWatchlist={(e) => this.addToWatchlist(e, movie.id)} />
                 )
             });
         } else if (this.state.query) {

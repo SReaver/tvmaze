@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
-const axios = require('axios');
+//const axios = require('axios');
 //const events = require('./routes/api/events');
 let watchlist = [];
 // axios.get('http://api.tvmaze.com/shows')
@@ -16,18 +16,26 @@ let watchlist = [];
 
 
 app.use(express.json({ extended: false }));
-app.post('/watchlist', (req, res) => {
-    //console.log('res: ', res.body.data);
-    const movie = Object.assign({}, req.body);
-    watchlist.push(movie);
-    console.log('req: ', req.body);
+app.put('/watchlist', (req, res) => {
+    if (watchlist.indexOf(req.body.id) == -1) {
+        watchlist.push(req.body.id);
+    }
     res.status(200).send();
-    //console.log(watchlist);
+    console.log(watchlist);
+})
+app.delete('/watchlist', (req, res) => {
+    console.log(watchlist);
+
+    for (let i = 0; i < watchlist.length; i++) {
+        if (watchlist[i] == req.body.id) {
+            watchlist.splice(i, 1);
+        }
+    }
+    console.log(watchlist);
+    res.status(200).send();
 })
 
-//app.get('/', (req, res) => res.send("Api Running"));
-//app.use('/', events);
+app.get('/watchlist', (req, res) => res.send(watchlist));
 
 
-//app.use((req, res) => { res.status(404).render('Page not found') });
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
