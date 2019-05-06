@@ -1,0 +1,31 @@
+{
+  "name": "tvmaze",
+  "version": "1.0.0",
+  "description": "Test assignment with TVMaze api",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SReaver/tvmaze.git"
+  },
+  "keywords": [
+    "tvmaze"
+  ],
+  "author": "Sergey Plotnikov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SReaver/tvmaze/issues"
+  },
+  "homepage": "https://github.com/SReaver/tvmaze#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "nodemon": "^1.19.0"
+  }
+}

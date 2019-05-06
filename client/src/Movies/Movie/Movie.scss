@@ -1,0 +1,30 @@
+// .Movie{
+//     text-align: center;
+//     display: inline-block;
+//     //display: flex;
+//     //flex-direction: column;
+//     margin: 5px;
+//     border: 1px solid red;
+//     border-radius: 15px;
+//     box-shadow: 2px;
+//     img{
+//         max-height: 295px;
+//     }
+// }
+.card{
+    display: inline-block;
+    text-align: center;
+    margin: 3px;
+    width: 18rem;
+    img{
+        margin-top: 10px;
+        max-height: 295px;
+        max-width: 210px;
+    }
+    &:hover{
+        // background: radial-gradient(#e5e5e5,#fff,#e5e5e5);
+        box-shadow: 5px 10px 20px 1px rgba(0,0,0,0.253)!important;
+        cursor: pointer;
+    }
+    // transition: top 0.8s ease-out;
+}

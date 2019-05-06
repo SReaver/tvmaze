@@ -1,0 +1,17 @@
+.FullMovie{
+    display: flex;
+    text-align: left;
+}
+.Cast{
+    display: flex;
+    flex-wrap: wrap;
+}
+.Poster{
+   // width: 50%;
+    img{
+        max-width: 500px;
+    }
+}
+.Description{
+    margin-left: 10px;
+}
