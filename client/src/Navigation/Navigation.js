@@ -9,6 +9,9 @@ const Navigation = (props) => (
         <NavItem>
             <NavLink tag={RRNavLink} to='/search'>Search</NavLink>
         </NavItem>
+        <NavItem>
+            <NavLink tag={RRNavLink} to='/watchlist'>WatchList</NavLink>
+        </NavItem>
     </Nav>
 );
 export default Navigation;

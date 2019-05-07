@@ -4,6 +4,7 @@ import './App.css'
 import Movies from './Movies/Movies';
 import FullMovie from './Movies/FullMovie/FullMovie';
 import Search from './Movies/Search/Search';
+import WatchList from './Movies/WatchList/WatchList';
 import Navigation from './Navigation/Navigation';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         </nav>
       </header> */}
       <Switch>
+        <Route path='/watchlist' exact component={WatchList} />
         <Route path='/search' exact component={Search} />
         <Route path='/:id' exact component={FullMovie} />
         <Route path='/' exact component={Movies} />

@@ -4,7 +4,7 @@ import Movie from '../Movie/Movie';
 import axios from '../../axios';
 import array2string from '../../Func/array2string';
 import Paging from '../../Paging/Paging';
-import { Button } from 'reactstrap';
+// import { Button } from 'reactstrap';
 export default class Search extends Component {
     state = {
         movies: null,
@@ -86,7 +86,8 @@ export default class Search extends Component {
                         genres={movie.genres.length < 1 ? array2string(movie.genres) : 'Genre not defined'}
                         status={movie.status}
                         clicked={() => this.props.history.push('/' + movie.id)}
-                        addToWatchlist={(e) => this.addToWatchlist(e, movie.id)} />
+                        btnAction={(e) => this.addToWatchlist(e, movie.id)}
+                        btnLabel={"Add to Watchlist"}  />
                 )
             });
         } else if (this.state.query) {

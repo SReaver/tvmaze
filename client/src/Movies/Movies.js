@@ -57,8 +57,8 @@ export default class Movies extends Component {
                         genres={array2string(movie.genres)}
                         status={movie.status}
                         clicked={() => this.props.history.push('/' + movie.id)}
-                        addToWatchlist={(e) => this.addToWatchlist(e, movie.id)}
-                    // onSubmit={(e) => { this.searchhandler(); e.preventDefault(); }}
+                        btnAction={(e) => this.addToWatchlist(e, movie.id)}
+                   btnLabel={"Add to Watchlist"} 
                     />
                 )
             });

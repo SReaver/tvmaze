@@ -15,23 +15,25 @@ let watchlist = [];
 //     .catch(err => console.log(err));
 
 
+
 app.use(express.json({ extended: false }));
 app.put('/watchlist', (req, res) => {
     if (watchlist.indexOf(req.body.id) == -1) {
         watchlist.push(req.body.id);
     }
     res.status(200).send();
-    console.log(watchlist);
+    console.log('put',watchlist);
 })
 app.delete('/watchlist', (req, res) => {
-    console.log(watchlist);
+    //console.log(watchlist);
+console.log("Na udalenie prishlo", req.body.id);
 
     for (let i = 0; i < watchlist.length; i++) {
-        if (watchlist[i] == req.body.id) {
+        if (watchlist[i] === req.body.id) {
             watchlist.splice(i, 1);
         }
     }
-    console.log(watchlist);
+    console.log('delete',watchlist);
     res.status(200).send();
 })
 
